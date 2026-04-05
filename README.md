@@ -14,7 +14,7 @@
 
 ![token length histogram](./docs/images/femi_token_length_histogram.png)
 
-![top bigrams chart](./docs/images/femi_top_biagrams.png)
+![top bigrams chart](./docs/images/femi_top_bigrams.png)
 
 This project uses an **EVTAL pipeline** to extract, validate, transform, analyze, and load data from a raw arXiv HTML page.
 
