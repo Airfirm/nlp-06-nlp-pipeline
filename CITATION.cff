@@ -19,9 +19,13 @@ authors:
     given-names: Denise M.
     orcid: "https://orcid.org/0000-0001-6165-7389"
     affiliation: "Northwest Missouri State University, USA"
+  - family-names: Oluwafemi
+    given-names: Salawu
+    orcid: "https://orcid.org/0000-0001-6165-7389"
+    affiliation: "Northwest Missouri State University, USA"
 
-repository-code: "https://github.com/denisecase/nlp-06-nlp-pipeline"
-url: "https://github.com/denisecase/nlp-06-nlp-pipeline"
+repository-code: "https://github.com/Airfirm/nlp-06-nlp-pipeline"
+url: "https://github.com/Airfirm/nlp-06-nlp-pipeline"
 license: MIT
 
 abstract: |
