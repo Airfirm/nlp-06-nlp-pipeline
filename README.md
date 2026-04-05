@@ -3,7 +3,7 @@
 <!--additional badges are common. In your custom copy of the project, change `denisecase` to your GitHub account -->
 <!--To run link checks: open your project on GitHub, click the Actions tab, select "Check Links", click "Run workflow" -->
 
-[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://denisecase.github.io/nlp-06-nlp-pipeline/)
+[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://airfirm.github.io/nlp-06-nlp-pipeline/)
 [![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](https://www.python.org/)
 [![MIT](https://img.shields.io/badge/license-see%20LICENSE-yellow.svg)](./LICENSE)
 [![CI Status](https://github.com/denisecase/nlp-06-nlp-pipeline/actions/workflows/ci-python-zensical.yml/badge.svg?branch=main)](https://github.com/denisecase/nlp-06-nlp-pipeline/actions/workflows/ci-python-zensical.yml)
@@ -131,13 +131,13 @@ for this project.
 These files define the EVTL pipeline and the components you will update for your project.
 
 - **src/nlp/pipeline_web_html.py** - Main pipeline orchestrator (no changes required)
-- **src/nlp/config_case.py** - Configuration for page URL and paths (<mark>**copy and edit**</mark> for your project)
+- **src/nlp/config_case.py** - Configuration for page URL and paths (**copy and edit** for your project)
 - **src/nlp/stage01_extract.py** - Extract stage: fetches HTML from a web page (no changes required)
-- **src/nlp/stage02_validate_case.py** - Validate stage: inspects and verifies HTML structure (<mark>**copy and edit**</mark>)
-- **src/nlp/stage03_transform_case.py** - Transform stage: extracts, cleans, and engineers NLP features (<mark>**copy and edit**</mark>)
+- **src/nlp/stage02_validate_case.py** - Validate stage: inspects and verifies HTML structure (**copy and edit**)
+- **src/nlp/stage03_transform_case.py** - Transform stage: extracts, cleans, and engineers NLP features (**copy and edit**)
 - **src/nlp/stage04_load.py** - Load stage: writes output to persistent storage (no changes required)
-- **pyproject.toml** - Project metadata and dependencies (<mark>**update**</mark> authorship, links, and dependencies)
-- **zensical.toml** - Documentation configuration (<mark>**update**</mark> authorship and links)
+- **pyproject.toml** - Project metadata and dependencies (**update** authorship, links, and dependencies)
+- **zensical.toml** - Documentation configuration (**update** authorship and links)
 
 ## First: Follow These Instructions
 
@@ -178,8 +178,7 @@ They are provided here for convenience.
 
 Follow the guide for the **full instructions**.
 
-<details>
-<summary>Show command reference</summary>
+??? info "Show command reference"
 
 ### In a machine terminal (open in your `Repos` folder)
 
@@ -392,12 +391,12 @@ Pipeline executed successfully!
 
 ## References (Optional)
 
-- Turing (1950). *Computing Machinery and Intelligence*. https://www.csee.umbc.edu/courses/471/papers/turing.pdf
-- Weizenbaum (1966). *ELIZA—A Computer Program for the Study of Natural Language Communication Between Man and Machine*. https://dl.acm.org/doi/10.1145/365153.365168
-- Mikolov et al. (2013). *Efficient Estimation of Word Representations in Vector Space*. https://arxiv.org/abs/1301.3781
-- Pennington et al. (2014). *GloVe: Global Vectors for Word Representation*. https://nlp.stanford.edu/projects/glove/
-- Vaswani et al. (2017). *Attention Is All You Need*. https://arxiv.org/abs/1706.03762
-- Shapira et al. (2026). *Agents of Chaos*. https://arxiv.org/abs/2602.20021
+- Turing (1950). *Computing Machinery and Intelligence*. <https://www.csee.umbc.edu/courses/471/papers/turing.pdf>
+- Weizenbaum (1966). *ELIZA—A Computer Program for the Study of Natural Language Communication Between Man and Machine*. <https://dl.acm.org/doi/10.1145/365153.365168>
+- Mikolov et al. (2013). *Efficient Estimation of Word Representations in Vector Space*. <https://arxiv.org/abs/1301.3781>
+- Pennington et al. (2014). *GloVe: Global Vectors for Word Representation*. <https://nlp.stanford.edu/projects/glove/>
+- Vaswani et al. (2017). *Attention Is All You Need*. <https://arxiv.org/abs/1706.03762>
+- Shapira et al. (2026). *Agents of Chaos*. <https://arxiv.org/abs/2602.20021>
 
 ## Enhancements
 
