@@ -2,6 +2,20 @@
 
 ## Project Overview
 
+## Example Output
+
+![Bar Chart](./docs/images/femi_top_tokens.png)
+
+![Word Cloud](./docs/images/femi_wordcloud.png)
+
+![POS tag distribution](./docs/images/femi_pos_distribution.png)
+
+![Summary Metrics Charts](./docs/images/femi_summary_metrics.png)
+
+![token length histogram](./docs/images/femi_token_length_histogram.png)
+
+![top bigrams chart](./docs/images/femi_top_biagrams.png)
+
 This project uses an **EVTAL pipeline** to extract, validate, transform, analyze, and load data from a raw arXiv HTML page.
 
 EVTAL stands for:
@@ -151,23 +165,7 @@ uv run python -m nlp.pipeline_html_femi
 
 # Summary
 
--- This project shows how raw HTML from a research paper page can be turned into a structured dataset and analyzed using an EVTAL pipeline. It combines web scraping, text cleaning, feature engineering, and visualization in one workflow.
-
-## Example Output
-
-![Bar Chart](./docs/images/femi_top_tokens.png)
-
-![Word Cloud](./docs/images/femi_wordcloud.png)
-
-![POS tag distribution](./docs/images/femi_pos_distribution.png)
-
-![Summary Metrics Charts](./docs/images/femi_summary_metrics.png)
-
-![token length histogram](./docs/images/femi_token_length_histogram.png)
-
-![top bigrams chart](./docs/images/femi_top_biagrams.png)
-
-
+- This project shows how raw HTML from a research paper page can be turned into a structured dataset and analyzed using an EVTAL pipeline. It combines web scraping, text cleaning, feature engineering, and visualization in one workflow.
 
 
 
