@@ -1,4 +1,177 @@
-# nlp-06-nlp-pipeline
+# Module 6 Project: arXiv HTML EVTAL Pipeline
+
+## Project Overview
+
+This project uses an **EVTAL pipeline** to extract, validate, transform, analyze, and load data from a raw arXiv HTML page.
+
+EVTAL stands for:
+
+- **Extract**
+- **Validate**
+- **Transform**
+- **Analyze**
+- **Load**
+
+The project uses the arXiv paper page for:
+
+## APITestGenie: Generating Web API Tests from Requirements and API Specifications with LLMs
+
+arXiv ID: **2604.02039**
+
+## Source URL
+
+`https://arxiv.org/abs/2604.02039`
+
+## Goal of the Project
+
+The goal of this project is to take raw HTML from a webpage and turn it into a structured, analysis-ready dataset. This project also demonstrates how text can be cleaned and analyzed in a pipeline after extraction.
+
+## Data Source
+
+The raw data comes from an arXiv abstract page in HTML format.
+
+From this page, the pipeline extracts information such as:
+
+- title
+- authors
+- abstract
+- subject
+- submission date
+- arXiv ID
+- PDF link
+
+## Pipeline Stages
+
+This project is organized using an EVTAL workflow:
+
+### 1. Extract
+
+Fetch the raw HTML from the arXiv source page.
+
+### 2. Validate
+
+Check that the expected HTML tags and fields exist before processing.
+
+### 3. Transform
+
+Extract useful fields from the HTML and clean the text.
+
+### 4. Analyze
+
+Generate summary statistics and visualizations from the transformed text.
+
+### 5. Load
+
+Save the final structured output for later use.
+
+## Fields Extracted
+
+The Transform stage extracts fields such as:
+
+- `arxiv_id`
+- `title`
+- `authors`
+- `subjects`
+- `submitted`
+- `abstract_raw`
+- `abstract_clean`
+- `pdf_url`
+- `primary_subject`
+- `primary_category_code`
+- `journal_reference`
+
+## Derived Fields
+
+The project also creates derived fields for analysis, including:
+
+- `first_author`
+- `author_count`
+- `abstract_word_count`
+- `abstract_sentence_count`
+- `token_count`
+- `unique_token_count`
+- `type_token_ratio`
+- `title_char_count`
+
+## Analysis Outputs
+
+The Analyze stage creates visual outputs such as:
+
+- top token frequency chart
+- word cloud
+- top bigrams chart
+- token length histogram
+- POS tag distribution
+- summary metrics chart
+
+## Tools Used
+
+This project uses:
+
+- **Python**
+- **BeautifulSoup**
+- **pandas**
+- **spaCy**
+- **matplotlib**
+- **WordCloud**
+
+## Special Cleaning Step
+
+One important cleaning step was removing descriptor text like `Title:` and `Abstract:` from the extracted HTML fields. On arXiv pages, these labels are included inside the same tag as the actual content, so they must be removed before analysis.
+
+## What I Learned
+
+This project helped me understand:
+
+- how to work with HTML as a data source
+- how to inspect page structure before extraction
+- how to clean extracted text for NLP analysis
+- how to build a full EVTAL pipeline
+- how to create useful visuals from cleaned text
+
+## How to Run
+
+Run the pipeline from the project root with:
+
+```bash
+uv run python -m nlp.pipeline_html_femi
+
+
+# Project Structure
+
+## Example project files:
+
+- config_femi.py
+- stage01_extract_femi.py
+- stage02_validate_femi.py
+- stage03_transform_femi.py
+- stage04_analyze_femi.py
+- stage05_load_femi.py
+- pipeline_femi_html.py
+
+# Summary
+
+-- This project shows how raw HTML from a research paper page can be turned into a structured dataset and analyzed using an EVTAL pipeline. It combines web scraping, text cleaning, feature engineering, and visualization in one workflow.
+
+## Example Output
+
+![Bar Chart](./docs/images/femi_top_tokens.png)
+
+![Word Cloud](./docs/images/femi_wordcloud.png)
+
+![POS tag distribution](./docs/images/femi_pos_distribution.png)
+
+![Summary Metrics Charts](./docs/images/femi_summary_metrics.png)
+
+![token length histogram](./docs/images/femi_token_length_histogram.png)
+
+![top bigrams chart](./docs/images/femi_top_biagrams.png)
+
+
+
+
+
+
 
 <!--additional badges are common. In your custom copy of the project, change `denisecase` to your GitHub account -->
 <!--To run link checks: open your project on GitHub, click the Actions tab, select "Check Links", click "Run workflow" -->
@@ -414,20 +587,4 @@ before transformation begins,
 so later steps can run without errors or unexpected results.
 
 In this project, validation is implemented directly,
-so all checks are visible, repeatable, and easy to review as part
-of the pipeline.
-
-## Example Output
-
-<!-- TODO: change image links to point to your outputs -->
-<!-- For example:
-
-![Bar Chart](./data/processed/yourname_top_tokens.png)
-
-![Word Cloud](./data/processed/yourname_wordcloud.png)
-
--->
-
-![Bar Chart](./docs/images/case_top_tokens.png)
-
-![Word Cloud](./docs/images/case_wordcloud.png)
+so all checks are visible, repeatable, and easy to review as part of the pipeline.
