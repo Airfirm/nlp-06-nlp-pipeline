@@ -107,7 +107,6 @@ IMPORTANT: The model is declared at the end of `pyproject.toml` under
 **[tool.uv.sources]** and installs automatically via `uv sync`.
 A total `.venv` size of 350–450 MB is normal for NLP projects.
 
-
 ### Selecting Models
 
 Upgrade to `en_core_web_md` or larger when you need:
