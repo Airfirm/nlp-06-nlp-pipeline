@@ -4,7 +4,7 @@
 <!--To run link checks: open your project on GitHub, click the Actions tab, select "Check Links", click "Run workflow" -->
 
 [![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://denisecase.github.io/nlp-06-nlp-pipeline/)
-[![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](#)
+[![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](https://www.python.org/)
 [![MIT](https://img.shields.io/badge/license-see%20LICENSE-yellow.svg)](./LICENSE)
 [![CI Status](https://github.com/denisecase/nlp-06-nlp-pipeline/actions/workflows/ci-python-zensical.yml/badge.svg?branch=main)](https://github.com/denisecase/nlp-06-nlp-pipeline/actions/workflows/ci-python-zensical.yml)
 [![Check Links](https://github.com/denisecase/nlp-06-nlp-pipeline/actions/workflows/links.yml/badge.svg?branch=main)](https://github.com/denisecase/nlp-06-nlp-pipeline/actions/workflows/links.yml)
