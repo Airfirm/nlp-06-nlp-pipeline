@@ -320,3 +320,327 @@
 2026-04-05 14:46:03 | INFO | CI | ========================
 2026-04-05 14:46:03 | INFO | CI | Pipeline executed successfully!
 2026-04-05 14:46:03 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | === RUN START ===
+2026-04-05 16:02:32 | INFO | CI | project=Module 6: EVTAL PIPELINE - WEB DOCUMENTS (HTML)
+2026-04-05 16:02:32 | INFO | CI | repo_dir=nlp-06-nlp-pipeline
+2026-04-05 16:02:32 | INFO | CI | python=3.14.2
+2026-04-05 16:02:32 | INFO | CI | os=Windows 11
+2026-04-05 16:02:32 | INFO | CI | shell=powershell
+2026-04-05 16:02:32 | INFO | CI | cwd=.
+2026-04-05 16:02:32 | INFO | CI | github_actions=False
+2026-04-05 16:02:32 | INFO | CI | START PIPELINE
+2026-04-05 16:02:32 | INFO | CI | ROOT_PATH = .
+2026-04-05 16:02:32 | INFO | CI | DATA_PATH = data
+2026-04-05 16:02:32 | INFO | CI | RAW_PATH = data\raw
+2026-04-05 16:02:32 | INFO | CI | PROCESSED_PATH = data\processed
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | STAGE 01: EXTRACT starting...
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | EXTRACT: Fetching HTML from https://arxiv.org/abs/2604.02039
+2026-04-05 16:02:32 | INFO | CI | SOURCE URL = https://arxiv.org/abs/2604.02039
+2026-04-05 16:02:32 | INFO | CI | SINK PATH = data\raw\femi_raw.html
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | STAGE 02: VALIDATE starting...
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | HTML STRUCTURE INSPECTION:
+2026-04-05 16:02:32 | INFO | CI | Top-level type: BeautifulSoup
+2026-04-05 16:02:32 | INFO | CI | Top-level elements: ['html']
+2026-04-05 16:02:32 | INFO | CI | VALIDATE: Title found: True
+2026-04-05 16:02:32 | INFO | CI | VALIDATE: Authors found: True
+2026-04-05 16:02:32 | INFO | CI | VALIDATE: Abstract found: True
+2026-04-05 16:02:32 | INFO | CI | VALIDATE: Subjects found: True
+2026-04-05 16:02:32 | INFO | CI | VALIDATE: Dateline found: True
+2026-04-05 16:02:32 | INFO | CI | VALIDATE: HTML structure is valid.
+2026-04-05 16:02:32 | INFO | CI | Sink: validated BeautifulSoup object
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | STAGE 03: TRANSFORM starting...
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | Extracting metadata from HTML
+2026-04-05 16:02:32 | INFO | CI | We must manually inspect the HTML structure to identify the fields we want to extract.
+2026-04-05 16:02:32 | INFO | CI | For this arXiv page, we can extract:
+- Title from <h1 class='title'>
+- Authors from <div class='authors'>
+- Abstract from <blockquote class='abstract'>
+- Primary subject from <div class='subheader'>
+- Submission date from <div class='dateline'>
+- ArXiv ID from canonical link
+2026-04-05 16:02:32 | INFO | CI | Replace any missing content with `unknown` to ensure all are strings.
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | PHASE 3.1: Extract raw fields from HTML
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | Inspect: does the raw data look right?
+2026-04-05 16:02:32 | INFO | CI | Look at the logged output. Does anything look surprising?
+2026-04-05 16:02:32 | INFO | CI | That is the first signal that cleaning is needed.
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | ------------------------
+2026-04-05 16:02:32 | INFO | CI | Project specific: Extract title, authors, abstract
+2026-04-05 16:02:32 | INFO | CI | ------------------------
+2026-04-05 16:02:32 | INFO | CI | Extracted title: APITestGenie: Generating Web API Tests from Requirements and API Specifications with LLMs
+2026-04-05 16:02:32 | INFO | CI | Extracted authors: André Pereira, Bruno Lima, João Pascoal Faria
+2026-04-05 16:02:32 | INFO | CI | Extracted abstract: Modern software systems rely heavily on Web APIs, yet creating meaningful and executable test script...
+2026-04-05 16:02:32 | INFO | CI | ------------------------
+2026-04-05 16:02:32 | INFO | CI | Project specific: Extract subjects from subheader
+2026-04-05 16:02:32 | INFO | CI | ------------------------
+2026-04-05 16:02:32 | INFO | CI | Extracted subjects: Computer Science > Software Engineering
+2026-04-05 16:02:32 | INFO | CI | ------------------------
+2026-04-05 16:02:32 | INFO | CI | Project specific: Extract submission date from dateline
+2026-04-05 16:02:32 | INFO | CI | ------------------------
+2026-04-05 16:02:32 | INFO | CI | Extracted submission date: [Submitted on 2 Apr 2026]
+2026-04-05 16:02:32 | INFO | CI | ------------------------
+2026-04-05 16:02:32 | INFO | CI | Project specific: Extract arxiv_id from canonical link
+2026-04-05 16:02:32 | INFO | CI | ------------------------
+2026-04-05 16:02:32 | INFO | CI | Extracted arxiv_id: 2604.02039
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | PHASE 3.2: Clean and normalize text fields
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | Inspect: compare abstract_raw to abstract_clean in the log.
+2026-04-05 16:02:32 | INFO | CI | Did we remove anything we should have kept?
+2026-04-05 16:02:32 | INFO | CI | Is there still noise that cleaning missed?
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI |   abstract (raw):   Modern software systems rely heavily on Web APIs, yet creating meaningful and executable test scripts remains a largely ...
+2026-04-05 16:02:32 | INFO | CI |   abstract (clean): modern software systems rely heavily web apis creating meaningful executable test scripts remains largely manual timecon...
+2026-04-05 16:02:32 | INFO | CI |   characters removed: 243 (18.6%)
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | PHASE 3.3: Engineer derived features
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | Inspect: do these derived fields look meaningful?
+2026-04-05 16:02:32 | INFO | CI | Would any additional features help the analysis?
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI |   abstract_word_count: 177
+2026-04-05 16:02:32 | INFO | CI |   author_count:        3
+2026-04-05 16:02:32 | INFO | CI |   token_count:         124
+2026-04-05 16:02:32 | INFO | CI |   unique_token_count:  98
+2026-04-05 16:02:32 | INFO | CI |   type_token_ratio:    0.7903
+2026-04-05 16:02:32 | INFO | CI |   top 10 tokens:       ['modern', 'software', 'systems', 'rely', 'heavily', 'web', 'apis', 'creating', 'meaningful', 'executable']
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | PHASE 3.4: Build record and create DataFrame
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | Created DataFrame with 1 row and 13 columns
+2026-04-05 16:02:32 | INFO | CI | Columns: ['arxiv_id', 'title', 'authors', 'subjects', 'submitted', 'abstract_raw', 'abstract_clean', 'tokens', 'abstract_word_count', 'token_count', 'unique_token_count', 'type_token_ratio', 'author_count']
+2026-04-05 16:02:32 | INFO | CI | DataFrame Details
+2026-04-05 16:02:32 | INFO | CI |   Title: APITestGenie: Generating Web API Tests from Requirements and API Specifications with LLMs
+2026-04-05 16:02:32 | INFO | CI |   Author count: 3
+2026-04-05 16:02:32 | INFO | CI |   Abstract word count: 177
+2026-04-05 16:02:32 | INFO | CI |   Token count (clean): 124
+2026-04-05 16:02:32 | INFO | CI |   Type-token ratio: 0.7903
+2026-04-05 16:02:32 | INFO | CI |   DF preview:
+     arxiv_id                                              title  token_count  type_token_ratio  author_count
+0  2604.02039  APITestGenie: Generating Web API Tests from Re...          124            0.7903             3
+2026-04-05 16:02:32 | INFO | CI | Sink: Pandas DataFrame created
+2026-04-05 16:02:32 | INFO | CI | Transformation complete.
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | STAGE 04: ANALYZE starting...
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | PHASE 4.1: Extract tokens and summary statistics
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI |   Paper: APITestGenie: Generating Web API Tests from Requirements and API Specifications with LLMs
+2026-04-05 16:02:32 | INFO | CI |   Abstract word count (raw):    177
+2026-04-05 16:02:32 | INFO | CI |   Token count (clean):          124
+2026-04-05 16:02:32 | INFO | CI |   Unique token count:           98
+2026-04-05 16:02:32 | INFO | CI |   Type-token ratio:             0.7903
+2026-04-05 16:02:32 | INFO | CI |   Author count:                 3
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | PHASE 4.2: Top 20 token frequency - bar chart
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI |   Saved bar chart to data\processed\femi_top_tokens.png
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:32 | INFO | CI | PHASE 4.3: Word cloud
+2026-04-05 16:02:32 | INFO | CI | ========================
+2026-04-05 16:02:33 | INFO | CI |   Saved word cloud to data\processed\femi_wordcloud.png
+2026-04-05 16:02:33 | INFO | CI | ========================
+2026-04-05 16:02:33 | INFO | CI | PHASE 4.4: Top token summary (inline)
+2026-04-05 16:02:33 | INFO | CI | ========================
+2026-04-05 16:02:33 | INFO | CI |   Top 20 tokens by frequency:
+2026-04-05 16:02:33 | INFO | CI |       1. apis                           4
+2026-04-05 16:02:33 | INFO | CI |       2. tests                          4
+2026-04-05 16:02:33 | INFO | CI |       3. business                       4
+2026-04-05 16:02:33 | INFO | CI |       4. requirements                   4
+2026-04-05 16:02:33 | INFO | CI |       5. test                           3
+2026-04-05 16:02:33 | INFO | CI |       6. api                            3
+2026-04-05 16:02:33 | INFO | CI |       7. scripts                        2
+2026-04-05 16:02:33 | INFO | CI |       8. manual                         2
+2026-04-05 16:02:33 | INFO | CI |       9. apitestgenie                   2
+2026-04-05 16:02:33 | INFO | CI |      10. tool                           2
+2026-04-05 16:02:33 | INFO | CI |      11. generate                       2
+2026-04-05 16:02:33 | INFO | CI |      12. integration                    2
+2026-04-05 16:02:33 | INFO | CI |      13. including                      2
+2026-04-05 16:02:33 | INFO | CI |      14. endpoints                      2
+2026-04-05 16:02:33 | INFO | CI |      15. level                          2
+2026-04-05 16:02:33 | INFO | CI |      16. detail                         2
+2026-04-05 16:02:33 | INFO | CI |      17. modern                         1
+2026-04-05 16:02:33 | INFO | CI |      18. software                       1
+2026-04-05 16:02:33 | INFO | CI |      19. systems                        1
+2026-04-05 16:02:33 | INFO | CI |      20. rely                           1
+2026-04-05 16:02:33 | INFO | CI | Sink: visualizations saved to data/processed/
+2026-04-05 16:02:33 | INFO | CI | Analysis complete.
+2026-04-05 16:02:33 | INFO | CI | ========================
+2026-04-05 16:02:33 | INFO | CI | STAGE 04: LOAD starting...
+2026-04-05 16:02:33 | INFO | CI | ========================
+2026-04-05 16:02:33 | INFO | CI | SINK PATH = data\processed\femi_processed.csv
+2026-04-05 16:02:33 | INFO | CI | ========================
+2026-04-05 16:02:33 | INFO | CI | Pipeline executed successfully!
+2026-04-05 16:02:33 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | === RUN START ===
+2026-04-05 16:15:44 | INFO | CI | project=Module 6: EVTAL PIPELINE - WEB DOCUMENTS (HTML)
+2026-04-05 16:15:44 | INFO | CI | repo_dir=nlp-06-nlp-pipeline
+2026-04-05 16:15:44 | INFO | CI | python=3.14.2
+2026-04-05 16:15:44 | INFO | CI | os=Windows 11
+2026-04-05 16:15:44 | INFO | CI | shell=powershell
+2026-04-05 16:15:44 | INFO | CI | cwd=.
+2026-04-05 16:15:44 | INFO | CI | github_actions=False
+2026-04-05 16:15:44 | INFO | CI | START PIPELINE
+2026-04-05 16:15:44 | INFO | CI | ROOT_PATH = .
+2026-04-05 16:15:44 | INFO | CI | DATA_PATH = data
+2026-04-05 16:15:44 | INFO | CI | RAW_PATH = data\raw
+2026-04-05 16:15:44 | INFO | CI | PROCESSED_PATH = data\processed
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | STAGE 01: EXTRACT starting...
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | EXTRACT: Fetching HTML from https://arxiv.org/abs/2604.02039
+2026-04-05 16:15:44 | INFO | CI | SOURCE URL = https://arxiv.org/abs/2604.02039
+2026-04-05 16:15:44 | INFO | CI | SINK PATH = data\raw\femi_raw.html
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | STAGE 02: VALIDATE starting...
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | HTML STRUCTURE INSPECTION:
+2026-04-05 16:15:44 | INFO | CI | Top-level type: BeautifulSoup
+2026-04-05 16:15:44 | INFO | CI | Top-level elements: ['html']
+2026-04-05 16:15:44 | INFO | CI | VALIDATE: Title found: True
+2026-04-05 16:15:44 | INFO | CI | VALIDATE: Authors found: True
+2026-04-05 16:15:44 | INFO | CI | VALIDATE: Abstract found: True
+2026-04-05 16:15:44 | INFO | CI | VALIDATE: Subjects found: True
+2026-04-05 16:15:44 | INFO | CI | VALIDATE: Dateline found: True
+2026-04-05 16:15:44 | INFO | CI | VALIDATE: HTML structure is valid.
+2026-04-05 16:15:44 | INFO | CI | Sink: validated BeautifulSoup object
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | STAGE 03: TRANSFORM starting...
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | Source sink: validated BeautifulSoup object -> analysis-ready Pandas DataFrame
+2026-04-05 16:15:44 | INFO | CI | Goal: extract arXiv metadata, clean text fields, and engineer NLP features
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | PHASE 3.1: Locate HTML elements and extract raw fields
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | title_tag found: True
+2026-04-05 16:15:44 | INFO | CI | authors_tag found: True
+2026-04-05 16:15:44 | INFO | CI | abstract_tag found: True
+2026-04-05 16:15:44 | INFO | CI | subheader_tag found: True
+2026-04-05 16:15:44 | INFO | CI | dateline_tag found: True
+2026-04-05 16:15:44 | INFO | CI | canonical_tag found: True
+2026-04-05 16:15:44 | INFO | CI | primary_subject_tag found: True
+2026-04-05 16:15:44 | INFO | CI | pdf_tag found: True
+2026-04-05 16:15:44 | INFO | CI | journal_ref_label found: False
+2026-04-05 16:15:44 | INFO | CI | Extracted title: APITestGenie: Generating Web API Tests from Requirements and API Specifications with LLMs
+2026-04-05 16:15:44 | INFO | CI | Extracted authors: André Pereira, Bruno Lima, João Pascoal Faria
+2026-04-05 16:15:44 | INFO | CI | Derived first_author: André Pereira
+2026-04-05 16:15:44 | INFO | CI | Extracted abstract preview: Modern software systems rely heavily on Web APIs, yet creating meaningful and executable test scripts remains a largely ...
+2026-04-05 16:15:44 | INFO | CI | Extracted subjects heading: Computer Science > Software Engineering
+2026-04-05 16:15:44 | INFO | CI | Extracted primary_subject: Software Engineering (cs.SE)
+2026-04-05 16:15:44 | INFO | CI | Extracted raw submitted date: [Submitted on 2 Apr 2026]
+2026-04-05 16:15:44 | INFO | CI | Cleaned submitted date: 2 Apr 2026
+2026-04-05 16:15:44 | INFO | CI | Extracted arxiv_id: 2604.02039
+2026-04-05 16:15:44 | INFO | CI | Extracted pdf_url: https://arxiv.org/pdf/2604.02039
+2026-04-05 16:15:44 | INFO | CI | Derived primary_category_code: cs.SE
+2026-04-05 16:15:44 | INFO | CI | Extracted journal_reference: unknown
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | PHASE 3.2: Clean and normalize text
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | Comparing raw abstract with cleaned abstract to inspect tradeoffs
+2026-04-05 16:15:44 | INFO | CI | abstract_raw preview:   Modern software systems rely heavily on Web APIs, yet creating meaningful and executable test scripts remains a largely ...
+2026-04-05 16:15:44 | INFO | CI | abstract_clean preview: modern software systems rely heavily web apis creating meaningful executable test scripts remains largely manual timecon...
+2026-04-05 16:15:44 | INFO | CI | characters removed: 243 (18.6%)
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | PHASE 3.3: Engineer derived analytical features
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | abstract_word_count: 177
+2026-04-05 16:15:44 | INFO | CI | abstract_sentence_count: 7
+2026-04-05 16:15:44 | INFO | CI | author_count: 3
+2026-04-05 16:15:44 | INFO | CI | token_count: 124
+2026-04-05 16:15:44 | INFO | CI | unique_token_count: 98
+2026-04-05 16:15:44 | INFO | CI | type_token_ratio: 0.7903
+2026-04-05 16:15:44 | INFO | CI | title_char_count: 89
+2026-04-05 16:15:44 | INFO | CI | top 10 cleaned tokens preview: ['modern', 'software', 'systems', 'rely', 'heavily', 'web', 'apis', 'creating', 'meaningful', 'executable']
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | PHASE 3.4: Build record and create DataFrame
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | Created DataFrame with 1 row and 20 columns
+2026-04-05 16:15:44 | INFO | CI | Columns: ['arxiv_id', 'title', 'authors', 'first_author', 'subjects', 'primary_subject', 'primary_category_code', 'submitted', 'journal_reference', 'pdf_url', 'abstract_raw', 'abstract_clean', 'tokens', 'abstract_word_count', 'abstract_sentence_count', 'token_count', 'unique_token_count', 'type_token_ratio', 'author_count', 'title_char_count']
+2026-04-05 16:15:44 | INFO | CI | DataFrame summary preview:
+2026-04-05 16:15:44 | INFO | CI |
+  arxiv_id                                                                                     title  first_author primary_category_code  token_count  type_token_ratio  author_count
+2604.02039 APITestGenie: Generating Web API Tests from Requirements and API Specifications with LLMs André Pereira                 cs.SE          124            0.7903             3
+2026-04-05 16:15:44 | INFO | CI | Special handling note:
+2026-04-05 16:15:44 | INFO | CI | The title and abstract required cleaning because arXiv stores descriptor prefixes like 'Title:' and 'Abstract:' inside the same HTML tags as the content.
+2026-04-05 16:15:44 | INFO | CI | Sink: Pandas DataFrame created
+2026-04-05 16:15:44 | INFO | CI | Transformation complete.
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | STAGE 04: ANALYZE starting...
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | Source sink: transformed DataFrame -> charts, summaries, and saved analysis artifacts
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | PHASE 4.1: Extract tokens and summary statistics from DataFrame
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | Paper title: APITestGenie: Generating Web API Tests from Requirements and API Specifications with LLMs
+2026-04-05 16:15:44 | INFO | CI | Abstract word count (raw): 177
+2026-04-05 16:15:44 | INFO | CI | Abstract sentence count: 7
+2026-04-05 16:15:44 | INFO | CI | Token count (clean): 124
+2026-04-05 16:15:44 | INFO | CI | Unique token count: 98
+2026-04-05 16:15:44 | INFO | CI | Type-token ratio: 0.7903
+2026-04-05 16:15:44 | INFO | CI | Author count: 3
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:44 | INFO | CI | PHASE 4.2: Top 20 token frequency chart
+2026-04-05 16:15:44 | INFO | CI | ========================
+2026-04-05 16:15:45 | INFO | CI |   Saved top-token bar chart to data\processed\femi_top_tokens.png
+2026-04-05 16:15:45 | INFO | CI | ========================
+2026-04-05 16:15:45 | INFO | CI | PHASE 4.3: Word cloud
+2026-04-05 16:15:45 | INFO | CI | ========================
+2026-04-05 16:15:45 | INFO | CI |   Saved word cloud to data\processed\femi_wordcloud.png
+2026-04-05 16:15:45 | INFO | CI | ========================
+2026-04-05 16:15:45 | INFO | CI | PHASE 4.4: Top bigram frequency chart
+2026-04-05 16:15:45 | INFO | CI | ========================
+2026-04-05 16:15:46 | INFO | CI |   Saved bigram bar chart to data\processed\femi_top_bigrams.png
+2026-04-05 16:15:46 | INFO | CI | ========================
+2026-04-05 16:15:46 | INFO | CI | PHASE 4.5: Token length histogram
+2026-04-05 16:15:46 | INFO | CI | ========================
+2026-04-05 16:15:46 | INFO | CI |   Saved token-length histogram to data\processed\femi_token_length_histogram.png
+2026-04-05 16:15:46 | INFO | CI | ========================
+2026-04-05 16:15:46 | INFO | CI | PHASE 4.6: POS tag distribution
+2026-04-05 16:15:46 | INFO | CI | ========================
+2026-04-05 16:15:46 | INFO | CI |   Saved POS distribution chart to data\processed\femi_pos_distribution.png
+2026-04-05 16:15:46 | INFO | CI | ========================
+2026-04-05 16:15:46 | INFO | CI | PHASE 4.7: Summary metrics chart
+2026-04-05 16:15:46 | INFO | CI | ========================
+2026-04-05 16:15:46 | INFO | CI |   Saved summary metrics chart to data\processed\femi_summary_metrics.png
+2026-04-05 16:15:46 | INFO | CI | ========================
+2026-04-05 16:15:46 | INFO | CI | PHASE 4.8: Top token summary (inline log output)
+2026-04-05 16:15:46 | INFO | CI | ========================
+2026-04-05 16:15:46 | INFO | CI | Top 20 tokens by frequency:
+2026-04-05 16:15:46 | INFO | CI |    1. apis                      4
+2026-04-05 16:15:46 | INFO | CI |    2. tests                     4
+2026-04-05 16:15:46 | INFO | CI |    3. business                  4
+2026-04-05 16:15:46 | INFO | CI |    4. requirements              4
+2026-04-05 16:15:46 | INFO | CI |    5. test                      3
+2026-04-05 16:15:46 | INFO | CI |    6. api                       3
+2026-04-05 16:15:46 | INFO | CI |    7. scripts                   2
+2026-04-05 16:15:46 | INFO | CI |    8. manual                    2
+2026-04-05 16:15:46 | INFO | CI |    9. apitestgenie              2
+2026-04-05 16:15:46 | INFO | CI |   10. tool                      2
+2026-04-05 16:15:46 | INFO | CI |   11. generate                  2
+2026-04-05 16:15:46 | INFO | CI |   12. integration               2
+2026-04-05 16:15:46 | INFO | CI |   13. including                 2
+2026-04-05 16:15:46 | INFO | CI |   14. endpoints                 2
+2026-04-05 16:15:46 | INFO | CI |   15. level                     2
+2026-04-05 16:15:46 | INFO | CI |   16. detail                    2
+2026-04-05 16:15:46 | INFO | CI |   17. modern                    1
+2026-04-05 16:15:46 | INFO | CI |   18. software                  1
+2026-04-05 16:15:46 | INFO | CI |   19. systems                   1
+2026-04-05 16:15:46 | INFO | CI |   20. rely                      1
+2026-04-05 16:15:46 | INFO | CI | Sink: visualizations saved to data/processed/
+2026-04-05 16:15:46 | INFO | CI | Analysis complete.
+2026-04-05 16:15:46 | INFO | CI | ========================
+2026-04-05 16:15:46 | INFO | CI | STAGE 04: LOAD starting...
+2026-04-05 16:15:46 | INFO | CI | ========================
+2026-04-05 16:15:46 | INFO | CI | SINK PATH = data\processed\femi_processed.csv
+2026-04-05 16:15:46 | INFO | CI | ========================
+2026-04-05 16:15:46 | INFO | CI | Pipeline executed successfully!
+2026-04-05 16:15:46 | INFO | CI | ========================
